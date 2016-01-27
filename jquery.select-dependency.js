@@ -27,7 +27,7 @@
 
 			this.SelectDependencyBackup = $(this).clone();
 
-			$(this).on('change', function(){online
+			$(this).on('change', function(){
 
                 // lock check
                 if ($('body').hasClass('sd_lock'))	return;
