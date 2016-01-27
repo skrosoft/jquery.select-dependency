@@ -27,10 +27,11 @@
 
 			this.SelectDependencyBackup = $(this).clone();
 
-			$(this).on('change', function(){
+			$(this).on('change', function(){online
 
                 // lock check
                 if ($('body').hasClass('sd_lock'))	return;
+                if (!$(this).data('impact'))    return;
 
                 // locking
                 $('body').addClass('sd_lock');
@@ -48,7 +49,7 @@
                 });
 
                 // refresh value of all list that was impacting this element
-                all.each(function(){
+                if (defaults.show_all)  all.each(function(){
                     var impact = $(this).data('impact');
                     if (!impact)    return;
                     var value_impact = current.find('option:selected').data(impact);
